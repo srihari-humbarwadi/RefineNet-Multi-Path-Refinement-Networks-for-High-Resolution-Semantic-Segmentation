@@ -89,7 +89,7 @@ def RefineNetBlock(upper, lower):
         y = RCU(tensor=y, filters=512)
         return y
     y = RCU(tensor=upper, filters=256)
-    y = RCU(tensor=upper, filters=256)
+    y = RCU(tensor=y, filters=256)
     y = MRF(upper=y, lower=lower, filters=256)
     y = CRP(tensor=y, filters=256)
     y = RCU(tensor=y, filters=256)
