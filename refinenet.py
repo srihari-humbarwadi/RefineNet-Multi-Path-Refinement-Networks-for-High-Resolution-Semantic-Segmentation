@@ -45,7 +45,7 @@ def RCU(tensor, filters):
     '''Residual Conv Unit'''
     y = Activation('relu')(tensor)
     y = Conv2D(filters=filters, kernel_size=(3,3), padding='same', kernel_initializer='he_normal')(y)
-    y = Activation('relu')(tensor)
+    y = Activation('relu')(y)
     y = Conv2D(filters=filters, kernel_size=(3,3), padding='same', kernel_initializer='he_normal')(y)
     res = Add()([y, tensor])
     return res
