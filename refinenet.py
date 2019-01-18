@@ -88,8 +88,8 @@ def MRF(upper, lower, filters):
         # y_lower = Upsample(tensor=y_lower, method='bilinear', scale=2)
         y_lower = Conv2DTranspose(filters=filters, kernel_size=(3, 3),
                                   padding='same', strides=(2, 2), kernel_initializer='he_normal')(y_lower)
-        y_lower = Conv2D(filters=filters, kernel_size=(3, 3), padding='same',
-                         kernel_initializer='he_normal')(y_lower)
+#         y_lower = Conv2D(filters=filters, kernel_size=(3, 3), padding='same',
+#                          kernel_initializer='he_normal')(y_lower)
 
         y_upper = Conv2D(filters=filters, kernel_size=(3, 3),
                          padding='same', kernel_initializer='he_normal')(upper)
