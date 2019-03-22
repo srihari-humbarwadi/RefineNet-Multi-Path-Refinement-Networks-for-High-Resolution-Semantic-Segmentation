@@ -30,7 +30,7 @@ def Upsample(tensor, method='transpose', scale=None):
     def bilinear_upsample(x, scale):
         dims = K.int_shape(x)
         resized = tf.image.resize_bilinear(
-            images=x, size=[dims[1] * scale, dims[2] * scale])
+            images=x, size=[dims[1] * scale, dims[2] * scale], align_corners=True)
         return resized
 
     if method == 'transpose':
